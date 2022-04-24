@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  * 参考snowflake与sonyflake，按照32ms周期生成全局唯一ID
- * sony flake plus会按照时间有序生成，数据结构如下：<br/>
+ * CrystalFlake会按照时间有序生成，数据结构如下：<br/>
  *
  * <pre>
  * 0-000000000000000000000000000000000000-00000000-00-0000000000000-0000
