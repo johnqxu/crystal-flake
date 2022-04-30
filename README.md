@@ -34,14 +34,14 @@
   <dependency>
     <groupId>com.github.johnqxu</groupId>
     <artifactId>crystal-flake</artifactId>
-      <version>1.0.0</version>
+      <version>1.0.1</version>
   </dependency>
   ```
 
 -  Gradle
 
   ```groovy
-    implementation 'io.github.johnqxu:crystal-flake:1.0.0'
+    implementation 'io.github.johnqxu:crystal-flake:1.0.1'
   ```
 
 Spring Application启动类

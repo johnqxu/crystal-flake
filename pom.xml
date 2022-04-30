@@ -6,7 +6,7 @@
 
     <groupId>io.github.johnqxu</groupId>
     <artifactId>crystal-flake</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>Crystal Flake - A distributed ID generation component</name>
     <description>A distributed ID generation component inspired by snowflake and sonyflake, supports normal ID
         generation for clock-back scenarios.

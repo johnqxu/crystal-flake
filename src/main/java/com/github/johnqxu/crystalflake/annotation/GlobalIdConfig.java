@@ -3,9 +3,10 @@ package com.github.johnqxu.crystalflake.annotation;
 import com.github.johnqxu.crystalflake.FlakeGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.SingletonBeanRegistry;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.context.annotation.Bean;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @author 徐青
@@ -14,12 +15,6 @@ import org.springframework.context.annotation.Bean;
 public class GlobalIdConfig implements ApplicationContextAware {
     private long workerId = -1L;
     private long dataCenterId = -1L;
-
-    @Bean("flakeGenerator")
-    FlakeGenerator initGenerator() {
-        loadConfigFromEnv();
-        return new FlakeGenerator(workerId, dataCenterId);
-    }
 
     /**
      * 从环境变量读取worker与dataCenter的配置
@@ -36,5 +31,10 @@ public class GlobalIdConfig implements ApplicationContextAware {
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        ConfigurableApplicationContext cac = (ConfigurableApplicationContext) applicationContext;
+        loadConfigFromEnv();
+        FlakeGenerator flakeGenerator = new FlakeGenerator(workerId, dataCenterId);
+        SingletonBeanRegistry beanRegistry = cac.getBeanFactory();
+        beanRegistry.registerSingleton("flakeGenerator",flakeGenerator);
     }
 }
