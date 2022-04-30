@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Bean;
  */
 @Slf4j
 public class GlobalIdConfig implements ApplicationContextAware {
-    private ApplicationContext ac;
     private long workerId = -1L;
     private long dataCenterId = -1L;
 
@@ -37,6 +36,5 @@ public class GlobalIdConfig implements ApplicationContextAware {
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.ac = applicationContext;
     }
 }
