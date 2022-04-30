@@ -1,4 +1,4 @@
-# Crystal Snowflake [![Build Status](https://app.travis-ci.com/johnqxu/crystal-flake.svg?branch=main)](https://app.travis-ci.com/johnqxu/crystal-flake)
+# Crystal Snowflake [![Build Status](https://app.travis-ci.com/johnqxu/crystal-flake.svg?branch=main)](https://app.travis-ci.com/johnqxu/crystal-flake) [![codecov](https://codecov.io/gh/johnqxu/crystal-flake/branch/main/graph/badge.svg?token=57MPPGYXHF)](https://codecov.io/gh/johnqxu/crystal-flake)
 
 为分布式系统而生的全局id生成器组件。受snowflake、sonyflake启发，实现了时钟回拨保护，重新分配了各部分的bit位，能够通过简单的位运算回溯生成id的数据中心以及服务器，简化分布式系统单元化的实现难度。
 
